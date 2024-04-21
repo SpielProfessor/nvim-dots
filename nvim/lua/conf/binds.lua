@@ -2,6 +2,9 @@
 -- cfg by mrvollbart --
 
 -- HELP MENU
+require("conf.lazy")
+local wk = require("which-key")
+wk.register({}, opts)
 function printhelp()
   local help = [[
 +--------------------------+
@@ -15,7 +18,7 @@ function printhelp()
 |Alt+v Al+h Alt+f | Show/hide vertical/horizontal/floating terminal   |
 |Ctrl+a           | Toggle Aerial, a function/struct finder           |
 |Ctrl+s           | Toggle undo tree                                  |
-|Space+d          | Show docs                                         |
+|Space+d || Alt+/ | Show docs                                         |
 |?                | Show quick fixes                                  |
 +-----------------+---------------------------------------------------+
 |Buffer bar                                                           |
@@ -50,6 +53,7 @@ vim.keymap.set("n", "<C-j>", vim.cmd.TodoTrouble)
 vim.keymap.set("n", "<A-v>", ":ToggleTerm direction=vertical size=50\n")
 vim.keymap.set("n", "<A-h>", ":ToggleTerm direction=horizontal size=10\n")
 vim.keymap.set("n", "<A-f>", ":ToggleTerm direction=float size=20\n")
+vim.keymap.set("n", "<A-/>", ":Lspsaga hover_doc\n")
 
 -- open/close aerial with control-a
 if cfg.outline == "aerial" then

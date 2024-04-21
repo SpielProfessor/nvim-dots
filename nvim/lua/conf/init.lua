@@ -10,6 +10,7 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("conf.binds")
 require("conf.lazy")
 require("conf.cmp-conf")
+require("conf.statusline")
 cfg = require("conf.config")
 
 vim.cmd("set undofile")

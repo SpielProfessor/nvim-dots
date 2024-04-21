@@ -25,6 +25,19 @@ vim.opt.runtimepath:prepend(lazypath)
 
 local plugins = {
   {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end,
+  },
+  -- status bar
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  -- run code
+  {
     { "CRAG666/code_runner.nvim", config = true },
   },
   "weilbith/nvim-code-action-menu",
